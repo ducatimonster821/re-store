@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookstoreServiceConsumer } from '../bookstore-service-context';
+import {BookstoreServiceConsumer} from '../bookstore-service-context';
 
 const withBookstoreService = () => (Wrapped) => {
   // withBookstoreService, это будет функция, которая возвращает функцию, которая принимает компонент, который мы будем оборачивать.
@@ -11,13 +11,13 @@ const withBookstoreService = () => (Wrapped) => {
     return (
       <BookstoreServiceConsumer>
         {
-          (bookstoreservice) => {
-            return (<Wrapped {...props} bookstoreservice={bookstoreservice}) />
+          (bookstoreService) => {
+            return (<Wrapped {...props} bookstoreService={bookstoreService} />);
           }
         }
       </BookstoreServiceConsumer>
-    )
-  }
+    );
+  };
 };
 
 export default withBookstoreService;
